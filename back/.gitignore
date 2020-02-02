@@ -1,0 +1,12 @@
+/node_modules
+/bin
+/log
+.env
+package-lock.json
+/sessions
+/uploads
+.vimrc
+.bash_history
+.bash_profile
+.bashrc
+.npm
