@@ -12,14 +12,26 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles({
   container: {
     backgroundColor: '#cfe8fc',
-    height: '100vh'
+    height: '100%',
+    maxWidth: '100%',
+    position: 'fixed',
+    paddingLeft: 0,
+    paddingRight: 0
+  },
+  appBar: {
+    width: '100%'
   },
   appBarTitle: {
-    textAlign: "center"
+    position: 'absolute',
+    left: '50%'
   },
   appBarRightMenu: {
-    position: "absolute",
+    position: 'absolute',
     right: 0
+  },
+  board: {
+    position: 'relative',
+    marginTop: '65px'
   }
 })
 
@@ -30,19 +42,17 @@ const BoardContainer = () => {
     {/* React.Fragment, CssBaseline이 있어야 공백 없이 Container가 채워지는데 왜 그러는지는 모르겠음 */}
       <CssBaseline />
       <Container className={classes.container}>
-        <div className={classes.root}>
-          <AppBar position="static">
+          <AppBar  className={classes.appBar}>
             <Toolbar>
-              <IconButton edge="start" color="inherit" aria-label="menu">
-                <MenuIcon />
-              </IconButton>
-              <Typography variant="h6">
-                News
+              <Typography className={classes.appBarTitle} variant='h6'>
+                Trello
               </Typography>
-              <Button className={classes.appBarRightMenu} color="inherit">Login</Button>
+              <Button className={classes.appBarRightMenu} color='inherit'>Login</Button>
             </Toolbar>
           </AppBar>
-        </div>
+          <div className={classes.board}>
+            
+          </div>
       </Container>
     </React.Fragment>
   );

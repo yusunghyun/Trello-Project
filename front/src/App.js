@@ -5,10 +5,10 @@ import BoardContainer from './components/board/BoardContainer';
 function App() {
   return (
     <div>
-      <Link to="/boardContainer"></Link>
+      <Link to="/"></Link>
 
       <Switch>
-        <Route path="/:boardContainer" component={BoardContainer}></Route>
+        <Route path="/" component={BoardContainer} exact={true}></Route>
       </Switch>
     </div>
   );
