@@ -1,13 +1,6 @@
 import React from 'react';
-import Container from '@material-ui/core/Container';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { Link, Route, Switch } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles({
   container: {
@@ -38,23 +31,9 @@ const useStyles = makeStyles({
 const BoardContainer = () => {
   const classes = useStyles();
   return (
-    <React.Fragment>
-    {/* React.Fragment, CssBaseline이 있어야 공백 없이 Container가 채워지는데 왜 그러는지는 모르겠음 */}
-      <CssBaseline />
-      <Container className={classes.container}>
-          <AppBar  className={classes.appBar}>
-            <Toolbar>
-              <Typography className={classes.appBarTitle} variant='h6'>
-                Trello
-              </Typography>
-              <Button className={classes.appBarRightMenu} color='inherit'>Login</Button>
-            </Toolbar>
-          </AppBar>
-          <div className={classes.board}>
-            
-          </div>
-      </Container>
-    </React.Fragment>
+    <div className={classes.board}>
+      여기부터 시작
+    </div>
   );
 };
 
