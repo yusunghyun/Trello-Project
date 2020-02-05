@@ -14,16 +14,12 @@ const useStyles = makeStyles({
   title: {
     fontSize: 14,
   },
-  test: {
-    width: 50
-  }
 });
 
 const BoardItem = (props) => {
   const classes = useStyles();
 
   return (
-    <span>
       <Card className={classes.root}>
         <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
@@ -31,7 +27,6 @@ const BoardItem = (props) => {
           </Typography>
         </CardContent>
       </Card>
-    </span>
   );
 };
 
