@@ -19,7 +19,10 @@ const BoardItem = (props) => {
   const classes = useStyles();
 
   return (
-    <Link to="/list/:boardId">
+    <Link to={{
+      pathname: "/list/:boardId"
+      }}
+    >
       <Card className={classes.root}>
         <CardContent>
           <Typography boradId={props.boardId} className={classes.title} color="textSecondary" gutterBottom>
