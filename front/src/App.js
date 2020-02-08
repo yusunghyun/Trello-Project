@@ -7,6 +7,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { Route, Switch, Link } from 'react-router-dom';
+import ListContainer from './components/board/ListContainer';
+import CommonCss from './css/CommonCss';
 
 const useStyles = makeStyles({
   container: {
@@ -28,10 +31,7 @@ const useStyles = makeStyles({
     position: 'absolute',
     right: 0
   },
-  board: {
-    position: 'relative',
-    marginTop: '65px'
-  }
+  board: CommonCss.commonContainerCss
 })
 
 function App() {
@@ -45,17 +45,21 @@ function App() {
           {/* 최상단 헤더 */}
           <AppBar  className={classes.appBar}>
             <Toolbar>
-              <Typography className={classes.appBarTitle} variant='h6'>
-                Trello
-              </Typography>
+              <Link to="/">
+                <Typography className={classes.appBarTitle} variant='h6'>
+                  Trello
+                </Typography>
+              </Link>
               <Button className={classes.appBarRightMenu} color='inherit'>Login</Button>
             </Toolbar>
           </AppBar>
 
           {/* 여기 부터 Routing 시작 */}
-          <BoardContainer>
-
-          </BoardContainer>
+          <Switch>
+            <Route path="/" component={BoardContainer} exact></Route>
+            <Route path="/list" component={ListContainer}></Route>
+          </Switch>
+          {/* <BoardContainer>          </BoardContainer> */}
       </Container>
     </React.Fragment>
   );
