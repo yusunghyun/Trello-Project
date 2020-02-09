@@ -45,11 +45,11 @@ function App() {
           {/* 최상단 헤더 */}
           <AppBar  className={classes.appBar}>
             <Toolbar>
-              <Link to="/">
                 <Typography className={classes.appBarTitle} variant='h6'>
-                  Trello
+                  <Link to="/" style={{textDecoration: "none", color: "white"}}>
+                      Trello
+                  </Link>
                 </Typography>
-              </Link>
               <Button className={classes.appBarRightMenu} color='inherit'>Login</Button>
             </Toolbar>
           </AppBar>
