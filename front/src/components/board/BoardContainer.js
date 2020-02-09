@@ -46,7 +46,7 @@ const BoardContainer = () => {
             <BoardItem key={v.title} index={i}/>
           ))
         }
-      {/*리스트 Container 경로*/}
+      <BoardItem plus={"plus"} index={"추가+"}></BoardItem>
     </div>
   );
 };
