@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import {Link} from 'react-router-dom';
 import CommonCss from '../../css/CommonCss'
 
 const useStyles = makeStyles({
@@ -21,21 +20,15 @@ const BoardItem = (props) => {
   const classes = useStyles();
 
   return (
-    <Link to={{
-      pathname: "/list/:boardId"
-      }}
-      className={classes.nonTextDeco}
-    >
-      <Card className={classes.root}>
-        <CardContent>
-          <Typography className={classes.title} color="textSecondary" gutterBottom>
-            
-            {props.boardid}
-            {/* <Link to={"/list/"+props.boardId}></Link> */}
-          </Typography>
-        </CardContent>
-      </Card>
-    </Link>
+    <Card className={classes.root}>
+      <CardContent>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+          
+          {props.boardid}
+          {/* <Link to={"/list/"+props.boardId}></Link> */}
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
 

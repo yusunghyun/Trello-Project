@@ -1,10 +1,9 @@
 //Board에 메인 컨테이너. 보드와 관련된 컴포넌트는 모두 여기서 시작된다.
 import React from 'react';
-import { Link, Route, Switch, BrowserRouter } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import CommonCss from '../../css/CommonCss';
 import BoardItem from './BoardItem'
-import ListContainer from './ListContainer'
+import BoardLinkItem from './BoardLinkItem'
 
 const useStyles = makeStyles({
   board: CommonCss.commonContainerCss
@@ -36,17 +35,15 @@ const BoardContainer = () => {
 
     setBoard(boardData);
   })
-  console.log(boardData[0]);
+  
   return (
     <div className={[classes.board].join(' ')}>
       {/*board의 기본 경로*/}
 
         {
           board.map((v, i)=>(
-            <BoardItem key={i} boardid={v.boardid}/>
-            
+            <BoardLinkItem key={i} boardid={v.boardid}/>
           ))
-          
         }
       <BoardItem plus={"plus"} boardid={0}></BoardItem>
     </div>
