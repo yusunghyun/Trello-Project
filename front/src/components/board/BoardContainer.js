@@ -12,10 +12,10 @@ const useStyles = makeStyles({
 
 //board를 가져오는 ajax. 서버 개발전 까지 하드 코딩 데이터로 대체
 const boardData = [
-  {board1: {title: 'board1', boardKey: 1, boardId: 1}},
-  {board2: {title: 'board2', boardKey: 2, boardId: 2}},
-  {board3: {title: 'board3', boardKey: 3, boardId: 3}},
-  {board4: {title: 'board4', boardKey: 4, boardId: 4}}
+  {title: 'board1', boardKey: 1, boardid: 1},
+  {title: 'board2', boardKey: 2, boardid: 2},
+  {title: 'board3', boardKey: 3, boardid: 3},
+  {title: 'board4', boardKey: 4, boardid: 4}
 ];
 
 /**
@@ -36,17 +36,19 @@ const BoardContainer = () => {
 
     setBoard(boardData);
   })
-  
+  console.log(boardData[0]);
   return (
     <div className={[classes.board].join(' ')}>
       {/*board의 기본 경로*/}
 
         {
           board.map((v, i)=>(
-            <BoardItem key={v.title} index={i}/>
+            <BoardItem key={i} boardid={v.boardid}/>
+            
           ))
+          
         }
-      <BoardItem plus={"plus"} index={"추가+"}></BoardItem>
+      <BoardItem plus={"plus"} boardid={0}></BoardItem>
     </div>
   );
 };

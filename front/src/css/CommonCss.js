@@ -5,6 +5,9 @@ const CommonCss = {
   commonContainerCss: {
     position: 'relative',
     marginTop: '65px'
+  },
+  nonTextDeco: {
+    textDecoration: 'none'
   }
 }
 

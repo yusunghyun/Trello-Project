@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom';
+import CommonCss from '../../css/CommonCss'
 
 const useStyles = makeStyles({
   root: {
@@ -13,6 +14,7 @@ const useStyles = makeStyles({
   title: {
     fontSize: 14,
   },
+  nonTextDeco: CommonCss.nonTextDeco
 });
 
 const BoardItem = (props) => {
@@ -22,11 +24,13 @@ const BoardItem = (props) => {
     <Link to={{
       pathname: "/list/:boardId"
       }}
+      className={classes.nonTextDeco}
     >
       <Card className={classes.root}>
         <CardContent>
-          <Typography boradId={props.boardId} className={classes.title} color="textSecondary" gutterBottom>
-            {props.index}
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
+            
+            {props.boardid}
             {/* <Link to={"/list/"+props.boardId}></Link> */}
           </Typography>
         </CardContent>

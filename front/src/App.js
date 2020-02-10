@@ -31,7 +31,8 @@ const useStyles = makeStyles({
     position: 'absolute',
     right: 0
   },
-  board: CommonCss.commonContainerCss
+  board: CommonCss.commonContainerCss,
+  nonTextDeco: CommonCss.nonTextDeco
 })
 
 function App() {
@@ -46,7 +47,7 @@ function App() {
           <AppBar  className={classes.appBar}>
             <Toolbar>
                 <Typography className={classes.appBarTitle} variant='h6'>
-                  <Link to="/" style={{textDecoration: "none", color: "white"}}>
+                  <Link to="/" className={classes.nonTextDeco} style={{color: "white"}}>
                       Trello
                   </Link>
                 </Typography>
