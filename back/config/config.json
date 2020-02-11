@@ -4,23 +4,20 @@
     "password": "ysh061616^^",
     "database": "dbysh616",
     "host": "db.ysh616.gabia.io",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "mysql"
   },
   "test": {
     "username": "ysh616",
     "password": "ysh061616^^",
     "database": "dbysh616",
     "host": "db.ysh616.gabia.io",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "mysql"
   },
   "production": {
     "username": "ysh616",
     "password": "ysh061616^^",
     "database": "dbysh616",
     "host": "db.ysh616.gabia.io",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "mysql"
   }
 }

@@ -7,4 +7,4 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING,
       defaultValue: 'rgb(0, 121, 191)'
     }
-  })
+  })}

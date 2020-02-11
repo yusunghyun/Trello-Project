@@ -11,26 +11,31 @@ var methodOverride = require("method-override");
 var rfs = require('rotating-file-stream');
 require('dotenv').config(); 
 var passport = require('passport');
-//하하하하2
+var passportConfig = require('./passport/index.js');
+const cors = require('cors')
+
+// var flash = require('connect-flash');
+
 var { sequelize } = require('./models');
 
 
 var app = express();
-sequelize.sync({force:true}); //{force:true}
+sequelize.sync(); //{force:true}
 
 // view engine setup
 app.locals.pretty = true;
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser(process.env.SECRET));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/files',express.static(path.join(__dirname, 'uploads')));
-app.use(flash());
+// app.use(flash());
 app.use(session({
   secret: process.env.SECRET,//salt같은거
   resave: false,
