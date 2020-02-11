@@ -1,23 +1,38 @@
 {
   "development": {
-    "username": "ysh616",
-    "password": "ysh061616^^",
-    "database": "dbysh616",
-    "host": "db.ysh616.gabia.io",
-    "dialect": "mysql"
+    "username": "root",
+    "password": "111111",
+    "database": "trello",
+    "port": 3306,
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "pool": {
+      "max": 10,
+      "min": 0
+    }
   },
   "test": {
-    "username": "ysh616",
-    "password": "ysh061616^^",
-    "database": "dbysh616",
-    "host": "db.ysh616.gabia.io",
-    "dialect": "mysql"
+    "username": "root",
+    "password": "111111",
+    "database": "trello",
+    "port": 3306,
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "pool": {
+      "max": 10,
+      "min": 0
+    }
   },
   "production": {
-    "username": "ysh616",
-    "password": "ysh061616^^",
-    "database": "dbysh616",
-    "host": "db.ysh616.gabia.io",
-    "dialect": "mysql"
+    "username": "root",
+    "password": "111111",
+    "database": "trello",
+    "port": 3306,
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "pool": {
+      "max": 10,
+      "min": 0
+    }
   }
 }
