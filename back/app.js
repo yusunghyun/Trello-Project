@@ -11,7 +11,7 @@ var methodOverride = require("method-override");
 var rfs = require('rotating-file-stream');
 require('dotenv').config(); 
 var passport = require('passport');
-//하하하하
+//하하하하2
 var { sequelize } = require('./models');
 
 
