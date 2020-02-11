@@ -18,7 +18,7 @@ const BoardLinkItem = (props) => {
       }}
       className={classes.nonTextDeco}
     >
-      <BoardItem key={props.i} boardid={props.boardid}></BoardItem>
+      <BoardItem key={props.i} boardId={props.boardId}></BoardItem>
     </Link>
   );
 };

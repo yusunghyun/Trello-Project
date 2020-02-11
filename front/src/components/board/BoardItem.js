@@ -4,16 +4,17 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import CommonCss from '../../css/CommonCss'
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 40,
+    minWidth: 40
   },
   title: {
     fontSize: 14,
   },
-  nonTextDeco: CommonCss.nonTextDeco
+  test: {
+    backgroundColor: 'red'
+  }
 });
 
 const BoardItem = (props) => {
@@ -24,7 +25,7 @@ const BoardItem = (props) => {
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           
-          {props.boardid}
+          {props.boardId}
           {/* <Link to={"/list/"+props.boardId}></Link> */}
         </Typography>
       </CardContent>
