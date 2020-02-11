@@ -1,7 +1,5 @@
 /node_modules
-/bin
 /log
-.env
 package-lock.json
 /sessions
 /uploads
