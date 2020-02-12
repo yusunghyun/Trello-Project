@@ -2,13 +2,16 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BoardItem from './BoardItem';
+import styled from 'styled-components'
 
 const useStyles = makeStyles({
-  pointer: {
-    cursor: 'pointer',
-    backgroundColor: 'red'
-  }
+  
 });
+
+const BoardAddItemStyled = styled.div`
+  cursor: pointer;
+  backgroundColor: red;
+`;
 
 const BoardAddItem = (props) => {
   const classes = useStyles();
@@ -18,9 +21,11 @@ const BoardAddItem = (props) => {
   };
   
   return (
-    <BoardItem boardId={props.boardId} onClick={addBoardClick}>
-    
-    </BoardItem>
+    <BoardAddItemStyled>
+      <BoardItem boardId={props.boardId} onClick={addBoardClick}>
+      
+      </BoardItem>
+    </BoardAddItemStyled>
   );
 };
 
