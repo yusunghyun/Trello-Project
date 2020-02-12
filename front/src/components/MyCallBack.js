@@ -13,14 +13,16 @@ const MyCallBack = () => {
   const onInputChange = useCallback(
     (e) => {setMyText(e.currentTarget.value)}
   ,[]);//  두번째파라미터배열에 특정state값하면 그 값이 수정될때만. ,[] 하면 최초1회?ㅋㅋ
-  const [board, setBoard] = useState()
-  const tossBoard = useCallback(()=>api.board.fetch().then(data=>console.log(data)))
+  const getBoard = useCallback(()=>api.board.fetch().then(data=>console.log(data)))
+  const getList = useCallback(()=>api.board.fetch(13).then(data=>console.log(data)))
+  const getCard = useCallback(()=>api.card.fetch(13).then(data=>console.log(data)))
   return (
     <div>
       <h3>{myText}</h3>
       <input type='text' placeholder="input...." onChange={onInputChange}/>
-      <h6>{board}</h6>
-      <button type='button' onClick={tossBoard}>이걸?</button>
+      <button type='button' onClick={getBoard}>get board</button>
+      <button type='button' onClick={getList}>get list</button>
+      <button type='button' onClick={getCard}>get card</button>
     
     </div>
   );

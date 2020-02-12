@@ -9,7 +9,7 @@ router.get('/',async(req,res)=>{
   const list = await Board.findAll( )
   res.json({ list })
 })
-router.post('/',authService.ensureAuth(),async(req,res)=>{
+router.post('/',async(req,res)=>{
   const UserId = 1
   let { title } = req.body
   
@@ -25,7 +25,7 @@ router.post('/',authService.ensureAuth(),async(req,res)=>{
   
   res.status(201).json({ item: board })
 })
-router.get('/:id',authService.ensureAuth(),async(req,res,next)=>{
+router.get('/:id',async(req,res,next)=>{
   
   const { id } = req.params
 
@@ -48,7 +48,7 @@ router.get('/:id',authService.ensureAuth(),async(req,res,next)=>{
   
   res.json({ item })
 })
-router.put('/:id',authService.ensureAuth(),async(req,res,next)=>{
+router.put('/:id',async(req,res,next)=>{
   const { id } = req.params
   let body = req.body
 
@@ -68,7 +68,7 @@ router.put('/:id',authService.ensureAuth(),async(req,res,next)=>{
 
   res.json({ item: board })
 })
-router.delete('/:id',authService.ensureAuth(),async(req,res,next)=>{
+router.delete('/:id',async(req,res,next)=>{
   const { id } = req.params
   await Board.destroy({ where: { id } })
   res.status(204).end()  

@@ -3,7 +3,7 @@ const router = express.Router();
 const {Board,Card,List,User} = require('../models')
 const authService = require('../jwt/auth.js')
 
-router.post('/',authService.ensureAuth(),async (req, res) => {
+router.post('/',async (req, res) => {
   const userId = 1
   let { title, BoardId, pos } = req.body
 
@@ -16,7 +16,7 @@ router.post('/',authService.ensureAuth(),async (req, res) => {
 
   res.status(201).json({ item: list })
 })
-router.put('/:id',authService.ensureAuth(),async (req, res) => {
+router.put('/:id',async (req, res) => {
   const {id} = req.params
   let body = req.body
 
@@ -39,7 +39,7 @@ router.put('/:id',authService.ensureAuth(),async (req, res) => {
 
   res.json({ item: list })
 })
-router.delete('/:id',authService.ensureAuth(),async (req, res) => {
+router.delete('/:id',async (req, res) => {
   const { id } = req.params
   if (!id) return res.status(400).json({ error: 'no id' })
 
