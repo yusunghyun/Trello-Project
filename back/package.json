@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "node ./bin/www",
-    "dev": "nodemon"
+    "dev": "nodemon app"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",

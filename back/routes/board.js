@@ -4,7 +4,7 @@ const {Board,Card,List,User} = require('../models')
 const authService = require('../jwt/auth.js')
 
 
-router.get('/',authService.ensureAuth(),async(req,res)=>{
+router.get('/',async(req,res)=>{
   // const userId = 1
   const list = await Board.findAll( )
   res.json({ list })

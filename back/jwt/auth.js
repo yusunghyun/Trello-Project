@@ -4,7 +4,7 @@ const expiresIn = 365 * 24 * 3600; // 365 days
 
 const auth = {
   signToken(id) {
-    return jwt.sign({ id }, secret, { expiresIn })
+    return jwt.sign({ id }, secret, { expiresIn }) //내용,비밀키,토큰설정
   },
   ensureAuth() {
     return (req, res, next) => {
@@ -16,7 +16,7 @@ const auth = {
 
       try {
         req.user = this.verify(authorization)
-      } catch (e) {
+      } catch (e) { //틀림or유효기간만료
         res.status(401)
         throw e
       }
