@@ -10,7 +10,6 @@ const useStyles = makeStyles({
 
 const BoardAddItemStyled = styled.div`
   cursor: pointer;
-  backgroundColor: red;
 `;
 
 const BoardAddItem = (props) => {
