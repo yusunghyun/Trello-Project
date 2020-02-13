@@ -44,7 +44,7 @@ const BoardContainer = () => {
           board.map((v, i)=>(
             <BoardLinkItem key={i} boardId={v.boardId}/>
           ))
-        }
+        }1
       <BoardAddItem setBoard={setBoard} boardId={0}></BoardAddItem>
     </div>
   );
