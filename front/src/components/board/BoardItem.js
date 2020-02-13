@@ -25,7 +25,7 @@ const BoardItem = (props) => {
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           
-          {props.boardId}
+          {props.title}
           {/* <Link to={"/list/"+props.boardId}></Link> */}
         </Typography>
       </CardContent>

@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "111111",
+    "password": "0000",
     "database": "trello",
-    "port": 3306,
+    "port": 3307,
     "host": "127.0.0.1",
     "dialect": "mysql",
     "pool": {
@@ -13,9 +13,9 @@
   },
   "test": {
     "username": "root",
-    "password": "111111",
+    "password": "0000",
     "database": "trello",
-    "port": 3306,
+    "port": 3307,
     "host": "127.0.0.1",
     "dialect": "mysql",
     "pool": {
@@ -25,9 +25,9 @@
   },
   "production": {
     "username": "root",
-    "password": "111111",
+    "password": "0000",
     "database": "trello",
-    "port": 3306,
+    "port": 3307,
     "host": "127.0.0.1",
     "dialect": "mysql",
     "pool": {
