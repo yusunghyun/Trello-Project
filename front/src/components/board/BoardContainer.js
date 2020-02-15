@@ -1,5 +1,5 @@
 //Board에 메인 컨테이너. 보드와 관련된 컴포넌트는 모두 여기서 시작된다.
-import React from 'react';
+import React, { useCallback } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CommonCss from '../../css/CommonCss';
 import BoardAddItem from './BoardAddItem';
@@ -67,25 +67,34 @@ const BoardContainer = () => {
     //board data를 가져오는 ajax.
     function makeBoardData() {
       api.board.fetch().then(
-        data => {
-          setBoard(data.list);
-          console.log(board)
-        }
+        data => setBoard(data.list)
       );
     }
-
     makeBoardData();
   }, []);
   
-  const handleOpen = () => {
+  //보드 추가 모달창 열기
+  const boardAddOpen = () => {
     console.log("board를 추가 합니다.");
     setOpen(true);
   };
 
-  const handleClose = () => {
+  //보드 추가 모달창 닫기
+  const boardAddClose = () => {
     console.log("board를 추가 modal을 닫습니다.");
     setOpen(false);
   };
+
+  //보드 추가 인풋 값 ref, 보드 추가 하기 버튼 클릭
+  const boardAddInput = React.useRef();
+  const boardAddClick = React.useCallback((e) => {
+    api.board.fetch().then(
+      data => {
+        setBoard(data.list);
+        console.log(board)
+      }
+    )
+  }, [boardAddInput])
 
   return (
     <div className={[classes.board].join(' ')}>
@@ -96,14 +105,14 @@ const BoardContainer = () => {
             <BoardLinkItem key={v.id} id={v.id} title={v.title}/>
           ))
         }
-      <BoardAddItem openModalEvent={handleOpen} setBoard={setBoard} title={"추가"}></BoardAddItem>
+      <BoardAddItem openModalEvent={boardAddOpen} setBoard={setBoard} title={"추가"}></BoardAddItem>
 
       {/* 보드 추가 모달 창 */}
       <Modal
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
         open={open}
-        onClose={handleClose}
+        onClose={boardAddClose}
       >
         <div style={modalStyle} className={classes.paper}>
           <h2 id="simple-modal-title">Board 추가</h2>
@@ -111,11 +120,11 @@ const BoardContainer = () => {
           <TextField
             error={inputErr}
             id="outlined-error-helper-text"
-            defaultValue="Board 이름 입력"
+            label="Board 이름 입력"
             helperText={inputErrMessage}
             variant="outlined"
           />
-          <Button className={classes.boardAddButton} variant="contained" color="primary">
+          <Button onClick={boardAddClick} className={classes.boardAddButton} variant="contained" color="primary">
             추가
           </Button>
           </form>
