@@ -120,7 +120,7 @@ const BoardContainer = () => {
           <TextField
             error={inputErr}
             id="outlined-error-helper-text"
-            defaultValue="Board 이름 입력"
+            label="Board 이름 입력"
             helperText={inputErrMessage}
             variant="outlined"
           />
