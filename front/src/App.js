@@ -11,7 +11,7 @@ import { Route, Switch, Link } from 'react-router-dom';
 import ListContainer from './components/board/ListContainer';
 import CommonCss from './css/CommonCss';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   container: {
     backgroundColor: '#cfe8fc',
     height: '100%',
@@ -33,10 +33,11 @@ const useStyles = makeStyles({
   },
   board: CommonCss.commonContainerCss,
   nonTextDeco: CommonCss.nonTextDeco
-})
+}));
 
 function App() {
   const classes = useStyles();
+
   return (
     <React.Fragment>
     {/* React.Fragment, CssBaseline이 있어야 공백 없이 Container가 채워지는데 왜 그러는지는 모르겠음 */}
@@ -60,7 +61,6 @@ function App() {
             <Route path="/" component={BoardContainer} exact></Route>
             <Route path="/list" component={ListContainer}></Route>
           </Switch>
-          {/* <BoardContainer>          </BoardContainer> */}
       </Container>
     </React.Fragment>
   );
