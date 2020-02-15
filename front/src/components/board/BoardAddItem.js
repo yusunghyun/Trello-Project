@@ -7,16 +7,13 @@ const BoardAddItemStyled = styled.div`
   cursor: pointer;
 `;
 
+
 const BoardAddItem = (props) => {
   //const classes = useStyles();
-
-  const addBoardClick = () => {
-    console.log("board를 추가 합니다.");
-  };
   
   return (
-    <BoardAddItemStyled>
-      <BoardItem title={props.title} onClick={addBoardClick}>
+    <BoardAddItemStyled  onClick={props.openModalEvent}>
+      <BoardItem title={props.title}>
       
       </BoardItem>
     </BoardAddItemStyled>
