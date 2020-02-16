@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 import { Route, Switch, Link } from 'react-router-dom';
 import ListContainer from './components/board/ListContainer';
 import CommonCss from './css/CommonCss';
+import Board from './components/lists/Board'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -59,7 +60,7 @@ function App() {
           {/* 여기 부터 Routing 시작 */}
           <Switch>
             <Route path="/" component={BoardContainer} exact></Route>
-            <Route path="/list" component={ListContainer}></Route>
+            <Route path="/list" component={Board}></Route>
           </Switch>
       </Container>
     </React.Fragment>
