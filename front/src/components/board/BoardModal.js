@@ -21,7 +21,7 @@ const BoardModal = () => {
         aria-describedby="simple-modal-description"
         open={open}
         onClose={boardAddClose}
-      >
+      >12311111111111111111154685678567811111111111
     </Modal>
   );
 };
