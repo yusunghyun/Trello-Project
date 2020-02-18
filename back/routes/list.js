@@ -44,13 +44,13 @@ router.delete('/:id',async (req, res) => {
   if (!id) return res.status(400).json({ error: 'no id' })
 
   const cardIds = await Card.findAll({
-    where: { listId: id }
+    where: { ListId: id }
   }).map(card => card.id)
 
   if (cardIds.length) {
     await Card.destroy({
       where: {
-        id: { [Op.in]: cardIds }
+        id: cardIds 
       }
     })
   }
