@@ -10,4 +10,4 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.DOUBLE,
       defaultValue: 65535
     }
-  })
+  })}

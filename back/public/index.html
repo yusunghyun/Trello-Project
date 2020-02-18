@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>API Document | Trello Server</title>
+  <style>
+    .item {
+      padding: 10px;
+    }
+    .item>div {
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <h1>API List</h1>
+  <div class="item">
+    <div></div>
+    <code>localhost:3000/</code>
+  </div>
+  <div class="item">
+    <div>사용방법</div>
+    <code>cd front 후 npm i axios@0.19.0</code>
+    <code>import * as api from '../api'  로 임폴트</code>
+    <code></code>
+  </div>
+  <div class="item">
+    <div>Login</div>
+    <code>api.auth.login(email,password)</code>
+  </div>
+  <div class="item">
+    <div>Logout</div>
+    <code>api.auth.logout()</code>
+  </div>
+  <div class="item">
+    <div>Join</div>
+    <code>api.auth.join(email,password)</code>
+  </div>
+
+  <hr />
+
+  <div class="item">
+    <div>Get board list</div>
+    <code>api.board.fetch()</code>
+  </div>
+  <div class="item">
+    <div>Get board</div>
+    <code>api.board.fetch(id)</code>
+  </div>
+  <div class="item">
+    <div>Add board</div>
+    <code>api.board.create(title)</code>
+  </div>
+  <div class="item">
+    <div>Edit board</div>
+    <code>api.board.update(id,{title,bgColor})</code>
+  </div>
+  <div class="item">
+    <div>Delete board</div>
+    <code>api.board.destroy(id)</code>
+  </div>
+
+  <hr />
+
+  <div class="item">
+    <div>Add list</div>
+    <code>api.list.create({title,BoardId,pos})</code>
+  </div>
+  <div class="item">
+    <div>Edit list</div>
+    <code>api.list.update(id,{pos,title})</code>
+  </div>
+  <div class="item">
+    <div>Delete list</div>
+    <code>api.list.destroy(id)</code>
+  </div>
+
+  <hr />
+
+  <div class="item">
+    <div>Add card</div>
+    <code>api.card.create(title,ListId,pos)</code>
+  </div>
+  <div class="item">
+    <div>Get card</div>
+    <code>api.card.fetch(id)</code>
+  </div>
+  <div class="item">
+    <div>Edit card</div>
+    <code>api.card.update(id,{title,description,pos,listId})</code>
+  </div>
+  <div class="item">
+    <div>Delete card</div>
+    <code>api.card.destroy(id)</code>
+  </div>
+
+</body>
+</html>
