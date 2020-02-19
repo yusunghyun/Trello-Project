@@ -8,6 +8,10 @@ import * as api from '../../api/index';
 import Modal from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+//hook 함수
+import { useSelector, useDispatch } from 'react-redux';
+//액션 호출 함수
+import { modalOnOffAction } from '../../modules/BoardModalAdder';
 
 const useStyles = makeStyles(theme => ({
   board: CommonCss.commonContainerCss,
@@ -57,7 +61,6 @@ const BoardContainer = () => {
 
   //modal 관련 state
   const [modalStyle] = React.useState(getModalStyle);
-  const [open, setOpen] = React.useState(false);
   
   //button 클릭시 유효성 체크 state
   const [inputErr, setInputErr] = React.useState(false);
@@ -72,18 +75,6 @@ const BoardContainer = () => {
     }
     makeBoardData();
   }, []);
-  
-  //보드 추가 모달창 열기
-  const boardAddOpen = () => {
-    console.log("board를 추가 합니다.");
-    setOpen(true);
-  };
-
-  //보드 추가 모달창 닫기
-  const boardAddClose = () => {
-    console.log("board를 추가 modal을 닫습니다.");
-    setOpen(false);
-  };
 
   //보드 추가 인풋 값 ref, 보드 추가 하기 버튼 클릭
   const boardAddInput = React.useRef();
@@ -96,6 +87,16 @@ const BoardContainer = () => {
     )
   }, [boardAddInput])
 
+  //스토어의 상태 값 중 사용하려는 것을 가져온다.
+  const { open } = useSelector(state => {
+    return {
+      open: state.ModalOnOffModule.open
+    };
+  });
+
+  //action 함수 dispatch함수
+  const dispatch = useDispatch();
+
   return (
     <div className={[classes.board].join(' ')}>
       {/*board의 기본 경로*/}
@@ -105,14 +106,14 @@ const BoardContainer = () => {
             <BoardLinkItem key={v.id} id={v.id} title={v.title}/>
           ))
         }
-      <BoardAddItem openModalEvent={boardAddOpen} setBoard={setBoard} title={"추가"}></BoardAddItem>
+      <BoardAddItem openModalEvent={() => dispatch(modalOnOffAction())} setBoard={setBoard} title={"추가"}></BoardAddItem>
 
       {/* 보드 추가 모달 창 */}
       <Modal
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
         open={open}
-        onClose={boardAddClose}
+        onClose={() => dispatch(modalOnOffAction())}
       >
         <div style={modalStyle} className={classes.paper}>
           <h2 id="simple-modal-title">Board 추가</h2>
